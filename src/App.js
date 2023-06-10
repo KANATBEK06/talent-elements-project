@@ -1,7 +1,9 @@
+import Button from './components/UI/Button'
+
 function App() {
   return (
     <div>
-      ывыывыыdvdfjvdkfjvnkjdfkjdhkjdhkdhfkjshosafohfiafajklfdfsadjflsflskflskl
+      <Button>kfjldkjslfskfjsl</Button>
     </div>
   )
 }
