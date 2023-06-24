@@ -1,11 +1,5 @@
-import Button from './components/UI/Button'
-
 function App() {
-  return (
-    <div>
-      <Button>kfjldkjslfskfjsl</Button>
-    </div>
-  )
+  return <div>siuu</div>
 }
 
 export default App
