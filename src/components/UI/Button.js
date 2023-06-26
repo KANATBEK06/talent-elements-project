@@ -116,7 +116,6 @@ const StyledButton = styled.button`
   @media screen and (max-width:390px) {
     ${getRequestAllowMediaButton}
   }
-  margin-top: 10px;
   font-family: 'Zen Kaku Gothic New';
   font-weight: 700;
   font-size: 14px;
