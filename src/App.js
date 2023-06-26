@@ -1,5 +1,5 @@
 function App() {
-  return <div>siuuu</div>
+  return <div>siuu</div>
 }
 
 export default App
