@@ -1,12 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const LessonsCard = ({ group }) => {
+const LessonsCard = ({ group, onClick }) => {
   return (
     <div>
       <Container>
         {group.map((element) => (
-          <StyledDiv key={element.id}>
+          <StyledDiv key={element.id} onClick={onClick}>
             <StyledImg src={element.img} alt='error advance.svg' />
             <StyledTitle>{element.title}</StyledTitle>
           </StyledDiv>
@@ -19,18 +19,20 @@ const LessonsCard = ({ group }) => {
 export default LessonsCard
 
 const Container = styled.div`
-  width: 1180px;
   display: flex;
-  justify-content: space-around;
   flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 1180px;
+
   @media screen and (max-width: 391px) {
-    width: 390px;
-    height: 100%;
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 10px;
+    flex-direction: row;
+    justify-content: space-around;
+    display: block;
+    display: flex;
+    justify-content: center;
   }
 `
 const StyledDiv = styled.div`
@@ -54,8 +56,10 @@ const StyledImg = styled.img`
   border-top-left-radius: 8px;
 `
 const StyledTitle = styled.h6`
-  width: 140px;
+  max-width: 100%;
+  width: 100%;
   height: 29px;
+  text-align: center;
   font-family: 'Zen Kaku Gothic New';
   font-weight: 700;
   font-size: 20px;
