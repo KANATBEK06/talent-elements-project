@@ -62,7 +62,6 @@ const StyledDiv = styled.div`
     ${getMediaSearch}
   }
   ${getBorderSearch}
-  margin-top:10px;
 `
 const StyledImg = styled.img`
   margin-left: 5px;
