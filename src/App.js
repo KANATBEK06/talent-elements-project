@@ -1,7 +1,5 @@
-import Lessons from "./components/UI/Lessons"
-
 function App() {
-  return <div><Lessons/></div>
+  return <div>siuu</div>
 }
 
 export default App
