@@ -35,10 +35,15 @@ const getBlockButton = (props) => {
     ? 'width:120px; background-color:#dc3545; height:38px;'
     : getStyleButton
 }
+const getUnlockButton = (props) => {
+  return props.variant === 'ActionUnlock-Button'
+    ? 'width:120px; background-color:#134764; height:38px;'
+    : getBlockButton
+}
 const getGroupButton = (props) => {
   return props.variant === 'group'
     ? 'width:340px; background-color:#134764; height:38px;'
-    : getBlockButton
+    : getUnlockButton
 }
 const getDoctrineButton = (props) => {
   return props.variant === 'Doctrine'
@@ -59,6 +64,16 @@ const getChangeButton = (props) => {
   return props.variant === 'Change-Button'
     ? 'width:20px; height:21px; background-color:#E0E0E0'
     : getDeleteButton
+}
+const getRequestRefusalButton = (props) => {
+  return props.variant === 'RequestRefusal-Buttons'
+    ? 'width:120px; height:38px; background-color:#dc3545;'
+    : getChangeButton
+}
+const getRequestAllowButton = (props) => {
+  return props.variant === 'RequestAllow-Buttons'
+    ? 'width:120px; height:38px; background-color:#dc3545;'
+    : getRequestRefusalButton
 }
 const getStyleMediaButton = (props) => {
   return props.variant === 'sing in'
@@ -112,11 +127,10 @@ const getRequestAllowMediaButton = (props) => {
 }
 
 const StyledButton = styled.button`
-  ${getChangeButton}
+  ${getRequestAllowButton}
   @media screen and (max-width:390px) {
     ${getRequestAllowMediaButton}
   }
-  margin-top: 10px;
   font-family: 'Zen Kaku Gothic New';
   font-weight: 700;
   font-size: 14px;
@@ -125,6 +139,7 @@ const StyledButton = styled.button`
   border-radius: 6px;
   padding: 0;
   color: white;
+  cursor: pointer;
 `
 const DeleteIcon = styled.img`
   width: 19px;
