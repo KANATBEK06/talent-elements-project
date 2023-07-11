@@ -1,8 +1,6 @@
 import styled from 'styled-components'
-
 import IconCardGroup from '../../../assets/icon/Vector (1).svg'
 import ImgCardGroup from '../../../assets/icon/Слой_x0020_1.svg'
-
 import ProgressCard from './ProgressCard'
 
 const Card = (props) => {

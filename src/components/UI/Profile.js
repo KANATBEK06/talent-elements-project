@@ -10,11 +10,9 @@ const Profile = ({ files, setFiles }) => {
     const url = URL.createObjectURL(fileGroup)
     setFiles(url)
   }
-
   const handleFileGroup = () => {
     fileGroup.current.click()
   }
-
   return (
     <div>
       <Container>
