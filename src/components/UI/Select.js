@@ -42,7 +42,6 @@ const Label = styled(InputLabel)`
   display: flex;
   align-items: center;
   justify-items: center;
-  text-align: center;
   color: ${({ variant }) =>
     variant === 'standard' ? 'var(--black, #373737)' : '#878787'};
   font-size: ${({ variant }) => (variant === 'standard' ? '16px' : '14xp')};
@@ -53,11 +52,12 @@ const Label = styled(InputLabel)`
   font-family: ${({ variant }) =>
     variant === 'standard' ? 'Zen Kaku Gothic New' : ' Poppins'};
   padding-bottom: -10px;
-  top: 0px;
-  bottom: ${(props) => (props.variant === 'standard' ? '25px' : '-4px')};
+  top: -35px;
+  bottom: ${(props) => (props.variant === 'standard' ? '25px' : '0px')};
+  text-align: center;
 `
 const StyledSelect = styled(Select)`
-  margin-top: 40px;
+  /* margin-top: 40px; */
   width: ${({ variant }) => (variant !== 'standard' ? '259px' : '340px')};
   height: ${({ variant }) => (variant !== 'standard' ? '38px ' : '35px')};
   color: ${({ variant }) =>
