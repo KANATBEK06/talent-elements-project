@@ -31,9 +31,6 @@ const Header = ({ data, profilHandler, handler, onburger }) => {
 export default Header
 
 const StyledDivContainer = styled.div`
-  margin-top: -10px;
-  padding-right: 20px;
-  margin-left: -10px;
   display: flex;
   justify-content: center;
   display: flex;
