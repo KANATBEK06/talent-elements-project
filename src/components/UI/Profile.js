@@ -4,17 +4,15 @@ import IconGroup from '../../assets/icon/Vector.svg'
 
 const Profile = ({ files, setFiles }) => {
   const fileGroup = useRef(null)
+
   const changeHandlerFile = (event) => {
-    const selectedFile = event.target.files[0]
-    if (selectedFile) {
-      const url = URL.createObjectURL(selectedFile)
-      setFiles(url)
-    }
+    const fileGroup = event.target.files[0]
+    const url = URL.createObjectURL(fileGroup)
+    setFiles(url)
   }
   const handleFileGroup = () => {
     fileGroup.current.click()
   }
-
   return (
     <div>
       <Container>
