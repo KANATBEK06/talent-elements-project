@@ -23,7 +23,7 @@ const Notifications = ({ variant, mentorData, studentData, managerData }) => {
         <StudentNotificationsBlock>
           <StudentNotificationsLeftBlock>
             <StudentNotificationsName>
-              {studentData.name}
+              {studentData.name}:
               <StudentNotificationsValue>
                 {studentData.name !== 'Бухалтерия'
                   ? `${
@@ -40,11 +40,19 @@ const Notifications = ({ variant, mentorData, studentData, managerData }) => {
               <StudentNotificationsScore>
                 {studentData.score} балл
               </StudentNotificationsScore>
-              <StudentNotificationsShowIcon
-                onClick={show}
-                src={showIcon}
-                alt='none'
-              />
+              {!showStudentNotifications ? (
+                <StudentNotificationsShowIcon
+                  onClick={show}
+                  src={showIcon}
+                  alt='none'
+                />
+              ) : (
+                <StudentNotificationsHideIcon
+                  onClick={show}
+                  src={showIcon}
+                  alt='none'
+                />
+              )}
             </StudentNotificationsRightBlock>
           )}
         </StudentNotificationsBlock>
@@ -167,7 +175,7 @@ const StudentNotificationsBlock = styled.div`
   box-shadow: 0px 0px 4px 0px #00000040;
   margin-bottom: 20px;
   display: flex;
-  align-items: start;
+  align-items: baseline;
   justify-content: space-between;
   padding: 16px 22px 18px 18px;
   @media screen and (max-width: 415px) {
@@ -244,7 +252,7 @@ const MentorNotificationsBlock = styled.div`
 `
 const StudentNotificationsLeftBlock = styled.div`
   display: flex;
-  align-items: center;
+  align-items: baseline;
 `
 const StudentNotificationsName = styled.span`
   font-family: 'Zen Kaku Gothic New', sans-serif;
@@ -254,7 +262,6 @@ const StudentNotificationsName = styled.span`
   letter-spacing: 0em;
   text-align: left;
   color: #373737;
-  max-width: 800px;
 `
 const StudentNotificationsValue = styled.span`
   font-family: 'Zen Kaku Gothic New', sans-serif;
@@ -265,8 +272,10 @@ const StudentNotificationsValue = styled.span`
   text-align: left;
   color: #373737;
   margin-left: 64px;
+  max-width: 800px;
   @media screen and (max-width: 415px) {
     margin-left: 15px;
+    max-width: 400px;
   }
 `
 const StudentNotificationsRightBlock = styled.div`
@@ -306,6 +315,26 @@ const StudentNotificationsShowIcon = styled.img`
   @media screen and (max-width: 375px) {
     margin-left: 180px;
     rotate: -90deg;
+    margin-bottom: 10px;
+  }
+`
+const StudentNotificationsHideIcon = styled.img`
+  width: 13px;
+  height: 13px;
+  rotate: 180deg;
+  @media screen and (max-width: 415px) {
+    margin-left: 200px;
+    rotate: 180deg;
+    margin-bottom: 10px;
+  }
+  @media screen and (max-width: 391px) {
+    margin-left: 200px;
+    rotate: 180deg;
+    margin-bottom: 10px;
+  }
+  @media screen and (max-width: 375px) {
+    margin-left: 180px;
+    rotate: 180deg;
     margin-bottom: 10px;
   }
 `
