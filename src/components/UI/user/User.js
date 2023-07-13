@@ -1,7 +1,12 @@
 import React from 'react'
+import Header from '../Header'
 
 const User = () => {
-  return <div>/фамилия имя</div>
+  return (
+    <div>
+      <Header />
+    </div>
+  )
 }
 
 export default User

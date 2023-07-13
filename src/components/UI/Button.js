@@ -117,18 +117,24 @@ const getAddMediaButton = (props) => {
 }
 const getRequestRefusalMediaButton = (props) => {
   return props.variant === 'RequestRefusal-Buttons'
-    ? 'width:144px; height:38px; background-color:#dc3545;'
+    ? 'width:144px; height:38px; background:#DC3545;'
     : getAddMediaButton
 }
 const getRequestAllowMediaButton = (props) => {
-  return props.variant === 'RequestAllow-Buttons'
-    ? 'width:144px; height:38px; background-color:#134764;'
+  return props.variant === 'RequestAllow-Button'
+    ? 'width:144px; height:38px; background:#134764;'
     : getRequestRefusalMediaButton
 }
 
 const StyledButton = styled.button`
   ${getRequestAllowButton}
-  @media screen and (max-width:390px) {
+  @media screen and (max-width:415px) {
+    ${getRequestAllowMediaButton}
+  }
+  @media screen and (max-width: 390px) {
+    ${getRequestAllowMediaButton}
+  }
+  @media screen and (max-width: 375px) {
     ${getRequestAllowMediaButton}
   }
   font-family: 'Zen Kaku Gothic New';
