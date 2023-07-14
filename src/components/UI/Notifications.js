@@ -24,34 +24,38 @@ const Notifications = ({ variant, mentorData, studentData, managerData }) => {
           <StudentNotificationsLeftBlock>
             <StudentNotificationsName>
               {studentData.name}:
-              <StudentNotificationsValue>
-                {studentData.name !== 'Бухалтерия'
-                  ? `${
-                      showStudentNotifications
-                        ? studentData.value
-                        : studentData.value.slice(0, 27)
-                    }`
-                  : studentData.value}
-              </StudentNotificationsValue>
             </StudentNotificationsName>
+            <StudentNotificationsValue days={studentData.days}>
+              {studentData.name !== 'Бухалтерия'
+                ? `${
+                    showStudentNotifications
+                      ? studentData.value
+                      : studentData.value.slice(0, 100)
+                  }`
+                : studentData.value}
+            </StudentNotificationsValue>
           </StudentNotificationsLeftBlock>
           {studentData.name !== 'Бухалтерия' && (
             <StudentNotificationsRightBlock>
-              <StudentNotificationsScore>
+              <StudentNotificationsScore score={studentData.score}>
                 {studentData.score} балл
               </StudentNotificationsScore>
-              {!showStudentNotifications ? (
-                <StudentNotificationsShowIcon
-                  onClick={show}
-                  src={showIcon}
-                  alt='none'
-                />
-              ) : (
-                <StudentNotificationsHideIcon
-                  onClick={show}
-                  src={showIcon}
-                  alt='none'
-                />
+              {studentData.value.length > 100 && (
+                <div>
+                  {!showStudentNotifications ? (
+                    <StudentNotificationsShowIcon
+                      onClick={show}
+                      src={showIcon}
+                      alt='none'
+                    />
+                  ) : (
+                    <StudentNotificationsHideIcon
+                      onClick={show}
+                      src={showIcon}
+                      alt='none'
+                    />
+                  )}
+                </div>
               )}
             </StudentNotificationsRightBlock>
           )}
@@ -262,6 +266,7 @@ const StudentNotificationsName = styled.span`
   letter-spacing: 0em;
   text-align: left;
   color: #373737;
+  width: 80px;
 `
 const StudentNotificationsValue = styled.span`
   font-family: 'Zen Kaku Gothic New', sans-serif;
@@ -270,7 +275,7 @@ const StudentNotificationsValue = styled.span`
   line-height: 23px;
   letter-spacing: 0em;
   text-align: left;
-  color: #373737;
+  color: ${(props) => props.days <= 5 && '#00CC0D;'}${(props) => props.days > 5 && '#DC3545'};
   margin-left: 64px;
   max-width: 800px;
   @media screen and (max-width: 415px) {
@@ -287,7 +292,7 @@ const StudentNotificationsScore = styled.p`
   width: 94px;
   height: 19px;
   border-radius: 4px;
-  background: #00cc0d;
+  background: ${(props) => (props.score > 1 ? '#00cc0d;' : 'gray')};
   color: white;
   font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 11px;
@@ -514,3 +519,4 @@ const MentorInput = styled.div`
     margin-bottom: 33px;
   }
 `
+
