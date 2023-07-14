@@ -20,7 +20,7 @@ const SiderBar = ({
   onClick5,
 }) => {
   return (
-    <SideBarBlock>
+    <SideBarBlock onClick={onClick5}>
       <Con>
         <DivImg>
           <img src={group1} alt='' />
@@ -182,7 +182,7 @@ const SideBarBlock = styled.div`
     background-color: rgba(0, 0, 0, 0.44);
     width: 100%;
     height: 100%;
-    position: absolute;
+    position: fixed;
     top: 0px;
     bottom: 0px;
     right: 0px;
