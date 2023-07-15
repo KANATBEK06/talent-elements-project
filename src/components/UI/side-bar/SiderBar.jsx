@@ -182,7 +182,7 @@ const SideBarBlock = styled.div`
     background-color: rgba(0, 0, 0, 0.44);
     width: 100%;
     height: 100%;
-    position: absolute;
+    position: fixed;
     top: 0px;
     bottom: 0px;
     right: 0px;
@@ -191,12 +191,13 @@ const SideBarBlock = styled.div`
 `
 const Con = styled.div`
   width: 243px;
-  height: 100%;
+  height: 100vh;
   background-color: rgba(255, 255, 255, 1);
   box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
   padding-left: 17px;
   padding-top: 90px;
-  position: fixed;
+  position: relative;
+  z-index: -1;
   cursor: pointer;
   @media (max-width: 391px) {
     width: 230px;
@@ -205,7 +206,8 @@ const Con = styled.div`
     box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
     padding-left: 0px;
     padding-top: 0px;
-    position: fixed;
+    position: relative;
+    z-index: -1;
     cursor: pointer;
   }
 `
