@@ -210,15 +210,20 @@ const StyledDivEmail = styled.div`
   margin-bottom: 32px;
 `
 const Buttons = styled.button`
-  position: fixed;
+  position: relative;
+  left: -75px;
   background-color: transparent;
+  margin-left: -25px;
   border: none;
   z-index: 20;
 `
 const Div = styled.div`
-  position: fixed;
-  width: 100px;
-  height: 100px;
+  position: relative;
+  top: -50px;
+  left: -75px;
+  margin-left: -45px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
-  z-index: 1;
+  z-index: 2;
 `

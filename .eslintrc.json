@@ -84,6 +84,7 @@
     "react/button-has-type": ["off"],
     "consistent-return": ["error"],
     "jsx-a11y/media-has-caption": ["off"],
-    "no-constant-condition": "off"
+    "no-constant-condition": "off",
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": false, "optionalDependencies": false, "peerDependencies": false}]
   }
 }
